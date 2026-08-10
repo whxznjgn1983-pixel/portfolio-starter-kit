@@ -6,6 +6,9 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         Hi！Welcome to Rae‘s PORTFOLIO
       </h1>
+      <p>
+       徐旻睿 英国 University Of Westminster 27届本科毕业
+      </p>
       <p className="mb-4">
        市场运营 / 内容策划方向
       </p>
