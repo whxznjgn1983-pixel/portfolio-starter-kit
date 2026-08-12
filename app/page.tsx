@@ -42,7 +42,7 @@ export default function Home() {
             marginBottom: "24px",
           }}
         >
-          Hi, I'm 融融洲.
+          欢迎来到我的作品集，我是徐旻睿.
         </h1>
 
         <p
