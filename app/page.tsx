@@ -63,9 +63,9 @@ export default function Home() {
             opacity: 0.75,
           }}
         >
-          我是一名就读于英国 University of Westminster
-          的电视节目制作学生，关注短视频内容策划、账号运营与数字内容生产。
-          曾负责中控科技 SCADA 官方账号的内容运营与视频制作。
+          英国 University of Westminster
+          电视节目制作本科毕业生，关注短视频内容策划、账号运营与数字内容生产。
+          曾负责中控技术 中控 SCADA 官方账号的内容运营与视频制作。
         </p>
 
         {/* Key Numbers */}
@@ -144,7 +144,7 @@ export default function Home() {
               marginBottom: "15px",
             }}
           >
-            SCADA 官方账号内容运营
+            部门官方账号内容运营
           </h3>
 
           <p
@@ -155,7 +155,7 @@ export default function Home() {
               maxWidth: "700px",
             }}
           >
-            负责中控科技 SCADA 官方账号的短视频内容运营，
+            负责中控技术 中控 SCADA 官方账号的短视频内容运营，
             参与选题、文案、拍摄、剪辑对接、封面制作、发布及数据复盘。
             在账号数据低迷阶段参与分析内容问题并提出优化策略。
           </p>
@@ -245,7 +245,7 @@ export default function Home() {
             opacity: 0.75,
           }}
         >
-          我目前就读于英国 University of Westminster
+          毕业于英国 University of Westminster
           电视节目制作专业。我的兴趣逐渐从单纯的视频制作，
           延伸到内容策划、账号运营以及数字内容生产。
           我希望继续积累真实商业项目经验，并探索 AI
