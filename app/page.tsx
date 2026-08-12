@@ -42,7 +42,7 @@ export default function Home() {
             marginBottom: "24px",
           }}
         >
-          欢迎来到我的作品集，我是徐旻睿.
+          Hi！I‘m Rae.
         </h1>
 
         <p
