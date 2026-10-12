@@ -59,6 +59,52 @@ function PerformanceDashboard() {
   )
 }
 
+function ImprovementTimeline() {
+  const steps = portfolioData.scadaPerformance.improvementTimeline
+  return (
+    <section className="improvement-section" aria-labelledby="improvement-title">
+      <div className="module-heading">
+        <p className="eyebrow">PROACTIVE STRATEGY OPTIMIZATION</p>
+        <h2 id="improvement-title">从发现问题到沉淀方法</h2>
+        <p>这套路径呈现我主动推动改进的实际行动，不将账号增长简化归因于单一策略。</p>
+      </div>
+      <ol className="improvement-timeline">
+        {steps.map((step, index) => (
+          <li key={step.label}>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <p>{step.label}</p>
+            <h3>{step.title}</h3>
+            <div>{step.description}</div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+function TeamContribution() {
+  const contributions = portfolioData.scadaPerformance.teamContributions
+  return (
+    <section className="team-contribution" aria-labelledby="contribution-title">
+      <div className="module-heading">
+        <p className="eyebrow">MY CONTRIBUTION TO THE TEAM</p>
+        <h2 id="contribution-title">我为团队带来的价值</h2>
+        <p>用已发生的工作行为说明贡献，同时保留拍摄、剪辑与业务协作中的团队边界。</p>
+      </div>
+      <div className="contribution-grid">
+        {contributions.map((item, index) => (
+          <article key={item.label}>
+            <span>0{index + 1}</span>
+            <p>{item.label}</p>
+            <h3>{item.title}</h3>
+            <div>{item.description}</div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function VideoCards({ project }: { project: CaseStudy }) {
   if (!project.videos?.length) return null
   return (
@@ -72,7 +118,7 @@ function VideoCards({ project }: { project: CaseStudy }) {
           </a>
         ))}
       </div>
-      <p className="video-role-note">本人在相关内容中参与选题策划、内容制作与账号运营执行；具体工作属于团队协作，不将视频表现归因于个人单独贡献。</p>
+      <p className="video-role-note">本人负责相关内容的选题、脚本、发布与运营监测，并参与视频制作；拍摄、剪辑与业务工作包含团队协作，不将视频表现归因于个人单独贡献。</p>
     </section>
   )
 }
@@ -104,7 +150,7 @@ function CaseStudyPage({ project }: { project: CaseStudy }) {
           ))}
         </div>
 
-        {project.slug === 'scada-content-operations' ? <PerformanceDashboard /> : null}
+        {project.slug === 'scada-content-operations' ? <><ImprovementTimeline /><TeamContribution /><PerformanceDashboard /></> : null}
 
         {project.supportingImage && project.supportingImageAlt ? (
           <figure className="case-supporting">
