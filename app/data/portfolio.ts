@@ -34,21 +34,21 @@ export const portfolioData = {
     degree: 'BA Television Production', graduation: '2027届本科毕业生',
     availability: '2027 CAMPUS RECRUITMENT · OPEN TO OPPORTUNITIES',
     roles: ['Content Operations', 'Brand Content Operations', 'Social Media Operations', 'Marketing Operations'],
-    focus: ['Content Operations', 'Brand Communication', 'Video Production'],
-    intro: '以内容运营为核心，将电视制作训练形成的选题、叙事与影像能力，应用于品牌账号、短视频和数字内容场景。关注受众需求、内容表达与数据反馈，也重视真实执行中的协作与复盘。',
+    focus: ['Content Operations', 'Content Strategy', 'Visual Production'],
+    intro: '我具备影视制作专业背景与真实科技企业账号运营经验，能够将内容创意、用户需求、运营数据与实际业务目标结合，并把工作方法沉淀为可复用的流程。',
     portrait: '/images/portrait.jpg', portraitAlt: '徐旻睿个人形象照',
   },
   stats: [
-    { value: '≈90%', label: 'Follower Growth', note: '实习期间账号累计粉丝规模近似增长' },
-    { value: '24', label: 'Videos Produced', note: '实习期间参与制作' },
+    { value: '24', label: 'Videos Produced', note: '实习期间累计参与制作' },
+    { value: '3,800+', label: 'Followers at Internship End', note: '实习结束时的账号累计粉丝规模' },
     { value: '30K+', label: 'Top Video Views', note: '单条最高播放，最近观察时仍在增长' },
   ],
   featuredProjects: [
     {
       index: '01', slug: 'scada-content-operations', category: 'CONTENT OPERATIONS', title: 'SCADA Content Operations', chineseTitle: '中控 SCADA 官方账号运营',
-      summary: '面向工业自动化专业受众，参与官方抖音账号从选题、脚本、制作到发布与数据复盘的内容工作流。',
+      summary: '作为官方账号视频内容的主要负责人，推进选题、脚本、制作、发布与数据复盘，并主动落实内容策略优化。',
       image: '/projects/scada-content-operations/cover.jpg', imageAlt: '中控 SCADA 官方账号视频内容拼图',
-      metrics: [{ label: '粉丝规模增长', value: '≈90%' }, { label: '参与制作', value: '24 条' }, { label: '最高播放', value: '30K+' }], tags: ['账号运营', '内容策略', '短视频', '数据复盘'],
+      metrics: [{ label: '参与制作', value: '24 条' }, { label: '实习结束粉丝', value: '3,800+' }, { label: '最高播放', value: '30K+' }], tags: ['内容负责', '账号运营', '策略优化', '数据复盘'],
     },
     {
       index: '02', slug: 'ai-video-production', category: 'AI CONTENT PRODUCTION', title: 'AI Video Production', chineseTitle: 'AI 工业宣传视频制作',
@@ -84,19 +84,31 @@ export const portfolioData = {
       { label: 'Peak Likes', value: '460+' }, { label: 'Peak Saves', value: '150+' }, { label: 'Total Followers', value: '3,800+' },
     ],
     methodology: '增长幅度以“2,000 多人”和“3,800 多人”为近似基准计算，因此 ≈90% 不是精确增长率，也不是同比数据。以上为账号在实习周期内的阶段性累计结果，不代表全部增长由个人独立创造。',
+    improvementTimeline: [
+      { label: 'Identified the Problem', title: '主动识别问题', description: '从流量低迷和内容表现波动中，识别选题与工程师真实需求之间的偏差。' },
+      { label: 'Developed the Strategy', title: '独立制定方案', description: '撰写账号运营优化方案，重新聚焦专业教学与工程师使用场景。' },
+      { label: 'Executed the Changes', title: '在内容中落实', description: '在自己负责的选题、脚本、发布与审核环节中落实调整。' },
+      { label: 'Monitored Performance', title: '持续监测复盘', description: '结合播放表现、用户评论与粉丝变化，持续调整后续选题。' },
+      { label: 'Standardized the Workflow', title: '沉淀运营 SOP', description: '在实习结束前完成流程整理与交接，后续实习生已使用该 SOP。' },
+    ],
+    teamContributions: [
+      { label: 'Content Ownership', title: '内容责任与独立执行', description: '作为官方账号视频内容的主要负责人，承担选题研究、脚本撰写、发布与反馈分析，并在较少日常指导下推进内容工作。' },
+      { label: 'Proactive Optimization', title: '主动发现与解决问题', description: '在账号表现不理想时主动分析问题，提出并落实内容优化方案，而非只执行既定任务。' },
+      { label: 'Workflow Standardization', title: '流程标准化', description: '主动整理运营 SOP 并完成交接。后续实习生已使用该 SOP，支持账号内容工作持续进行。' },
+    ],
   },
   caseStudies: {
     'scada-content-operations': {
       slug: 'scada-content-operations', number: '01', kicker: 'CORE INTERNSHIP PROJECT · CONTENT OPERATIONS', title: 'SCADA Content Operations', subtitle: '中控 SCADA 官方账号运营',
-      intro: '中控 SCADA 官方账号面向工业自动化领域专业受众，通过短视频传播软件知识、产品功能及应用场景。我在实习期间参与内容策划、制作、运营协同与复盘，不将账号阶段性增长归因于某一个人或单一动作。',
+      intro: '中控 SCADA 官方账号面向工业自动化专业受众。实习期间，我是账号视频内容的主要负责人，负责内容选题、脚本、发布与运营策略调整，同时与团队、拍摄与外包剪辑人员协作。账号阶段性表现属于团队与业务共同作用的结果。',
       cover: '/projects/scada-content-operations/cover.jpg', coverAlt: '中控 SCADA 官方账号短视频内容拼图',
       supportingImage: '/projects/scada-content-operations/results.jpg', supportingImageAlt: '中控 SCADA 官方账号部分视频及互动数据截图', supportingLabel: '阶段性内容表现截图 · 点击查看大图',
       metrics: [{ label: 'Follower Growth', value: '≈90%' }, { label: 'Videos Produced', value: '24' }, { label: 'Top Video Views', value: '30K+' }],
       sections: [
         { title: '项目背景', englishTitle: 'Project Overview', content: '2026 年 4 月 16 日至 8 月 14 日，在中控技术股份有限公司担任线上 SCADA 业务 To-C 业务转化实习生。账号在实习前已运营约 10 个月，累计粉丝 2,000 多人。' },
-        { title: '我的职责', englishTitle: 'My Responsibilities', content: '围绕官方抖音账号与相关推广内容，在明确协作边界的前提下推进工作。', bullets: ['参与执行：选题策划、视频脚本与文案、拍摄与剪辑、封面制作、发布及数据监测。', '协同推进：外包剪辑沟通与成片质量把控、达人合作沟通及产品推广支持、发布会与直播回顾内容制作。', '整理交接：运营 SOP 梳理与工作交接。', '分析与建议：根据账号表现整理运营优化方案，提出选题、定位、审核与发布节奏建议。'] },
+        { title: '我的职责', englishTitle: 'My Responsibilities', content: '作为官方账号视频内容的主要负责人，我推进从选题到发布与复盘的内容工作，并对协作环节准确标注团队贡献。', bullets: ['独立负责：选题研究、脚本与文案撰写、视频发布、数据监测及内容方向分析。', '参与制作：视频拍摄、剪辑、后期制作及 AI 工业视频内容。', '协同推进：对接外包剪辑并把控成片质量，参与达人合作、产品推广、发布会与直播回顾内容工作。', '主动推动：分析账号问题，制定并落实运营优化方案，整理标准化 SOP 并完成交接。'] },
         { title: '问题与分析', englishTitle: 'Challenges · Problem → Analysis', content: '实习期间，账号曾出现流量波动及部分内容表现不佳的问题。结合内容表现进行分析，但不把观察结果直接视为已验证的因果关系。', bullets: ['部分选题可能未充分匹配工程师的真实使用需求。', '泛娱乐内容整体表现一般，更具体的工业软件问题可能更容易触达目标受众。', '部分视频存在平台审核与限制词风险。', '发布节奏与官方账号内容定位仍有优化空间。'] },
-        { title: '策略与实际执行', englishTitle: 'Strategy & Execution', content: '以“问题观察—选题与脚本—素材准备—制作协同—封面与发布—数据记录—复盘”为执行路径。建议与已执行工作分开记录。', bullets: ['实际执行：围绕软件知识、产品功能与应用场景推进选题、脚本、拍摄、剪辑、发布及复盘。', '提出建议：聚焦工程师使用痛点，加强专业教学内容，优化脚本及发布前审核。', '提出建议：区分官方账号与个人 IP 账号的内容定位，建立相对固定的发布节奏。', '持续调整：依据发布后的数据反馈讨论后续选题，但不认定任何单项策略是增长的唯一原因。'] },
+        { title: '策略与实际执行', englishTitle: 'Strategy & Execution', content: '优化建议并非只停留在文档中，而是在后续由我负责的内容工作中得到实际采用。', bullets: ['增加工程师真实使用痛点相关选题，强化专业教学内容。', '减少与官方账号定位不匹配的泛娱乐与 Vlog 内容。', '优化视频脚本、限制词检查与发布前审核。', '调整内容选题和发布节奏，结合用户评论及数据反馈持续复盘。', '不将某项策略认定为粉丝增长的唯一原因。'] },
         { title: '表现与结果', englishTitle: 'Performance & Results', content: '实习期间参与制作 24 条视频；常规视频平均播放约 3,500；单条最高播放 30,000+，截至最近一次观察仍在持续获得播放；单条最高点赞 460+、最高收藏 150+。账号累计粉丝从 2,000 多人增至 3,800 多人。' },
         { title: '项目复盘', englishTitle: 'Reflection', content: '这段实践让我建立了从内容生产到数据复盘的完整视角，也更重视区分事实、建议与推断：专业受众需要更具体的问题切口，内容策略需要经过持续验证，团队成果也应明确协作边界。' },
       ],
@@ -153,16 +165,17 @@ export const portfolioData = {
   },
   experience: {
     period: '2026.04.16 — 2026.08.14', company: '中控技术股份有限公司', role: '线上 SCADA 业务 To-C 业务转化实习生', englishRole: 'Online SCADA To-C Business Conversion Intern',
-    summary: '面向中控 SCADA 官方抖音账号与相关推广场景，参与内容运营、短视频制作、数据监测、外部协作与 SOP 交接。账号阶段性表现属于团队与业务共同作用的结果。',
-    workflow: ['官方账号内容运营与选题策划', '视频脚本、文案、拍摄与剪辑', '外包剪辑沟通与成片质量把控', '封面制作、发布与数据监测分析', 'AI 工业视频内容制作', '运营 SOP 整理与交接', '达人合作与产品推广支持', '发布会及直播回顾内容制作'],
+    summary: '作为中控 SCADA 官方账号视频内容的主要负责人，我不仅推进内容制作，也主动分析账号问题、制定并落实优化方案，最后将方法整理为 SOP 完成交接。账号阶段性表现属于团队与业务共同作用的结果。',
+    workflow: ['负责官方账号视频内容策划与统筹', '独立开展选题研究及脚本撰写', '根据用户需求与数据反馈调整内容方向', '参与拍摄、剪辑及后期制作', '对接外包剪辑并把控成片质量', '负责视频发布与数据监测', '主动制定并执行运营优化方案', '整理标准化运营 SOP 并完成交接', '参与 AI 视频、达人合作与发布会内容工作'],
   },
   about: {
     paragraphs: [
-      '现就读于 University of Westminster BA Television Production，2027 届本科毕业生。电视制作训练让我熟悉从创意到成片的流程，也形成了对镜头、节奏、叙事与受众表达的敏感度。',
-      '求职方向为内容运营、品牌内容运营、新媒体运营、市场运营与内容策划。希望将内容策略、项目执行、数据复盘与视觉制作能力放进真实的品牌和业务场景。',
-    ], capabilities: ['内容策划', '短视频脚本', '账号运营', '品牌传播', '数据复盘', '摄影与后期', 'AI 内容制作'],
+      'I create content with both creativity and strategy. 现就读于 University of Westminster BA Television Production，预计 2027 年毕业。专业训练让我掌握影视内容制作、摄影与后期创作，也建立了对镜头、节奏和叙事的敏感度。',
+      '在中控技术实习期间，我从单纯关注视频制作，转向思考内容如何匹配用户需求、服务业务目标，以及如何通过数据反馈持续优化。我主要负责企业官方账号视频内容，主动推动策略调整，并通过运营 SOP 沉淀可复用的工作方法。',
+      '我希望将影视制作能力、内容策略思维与 AI 辅助生产能力结合，在内容营销、品牌传播与市场运营领域持续发展。',
+    ], capabilities: ['内容责任与独立执行', '策略制定与落地', '数据监测与复盘', '跨团队协作', '流程标准化', '视觉制作', 'AI 辅助内容生产'],
   },
-  contact: { email: '13868826077@163.com', resumePath: '/resume.pdf', note: '欢迎通过邮箱联系，或下载 PDF 简历了解更多经历。' },
+  contact: { email: '13868826077@163.com', resumePath: '/resume.pdf?v=20261012-2', note: '欢迎通过邮箱联系，或下载 PDF 简历了解更多经历。' },
 } as const
 
 export const allProjectSlugs = [
