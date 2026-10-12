@@ -176,7 +176,7 @@ export const portfolioData = {
       '我希望将影视制作能力、内容策略思维与 AI 辅助生产能力结合，在内容营销、品牌传播与市场运营领域持续发展。',
     ], capabilities: ['内容责任与独立执行', '策略制定与落地', '数据监测与复盘', '跨团队协作', '流程标准化', '视觉制作', 'AI 辅助内容生产'],
   },
-  contact: { email: '13868826077@163.com', resumePath: '/resume.pdf?v=20261012-2', note: '欢迎通过邮箱联系，或下载 PDF 简历了解更多经历。' },
+  contact: { email: '13868826077@163.com', resumePath: '/resume.pdf?v=20261013-1', note: '欢迎通过邮箱联系，或下载 PDF 简历了解更多经历。' },
 } as const
 
 export const allProjectSlugs = [
