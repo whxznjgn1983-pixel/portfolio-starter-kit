@@ -126,7 +126,7 @@ export default function Home() {
                 查看项目 <ArrowIcon />
               </a>
               <a className="text-link" href={contact.resumePath} download>
-                下载 PDF 简历 ↓
+                下载简历 / Download Resume ↓
               </a>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function Home() {
           <h2>寻找内容运营、品牌内容运营、<br />新媒体运营与市场运营机会。</h2>
           <div className="resume-actions">
             <a className="primary-button light-button" href={contact.resumePath} download>
-              下载 PDF 简历 ↓
+              下载简历 / Download Resume ↓
             </a>
             <a className="email-link" href={`mailto:${contact.email}`}>
               {contact.email} <ArrowIcon />
