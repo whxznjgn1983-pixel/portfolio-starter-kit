@@ -9,11 +9,11 @@ function ProjectCard({ project }: { project: FeaturedProject }) {
       <Link href={`/projects/${project.slug}`} className="featured-link" aria-label={`查看项目：${project.title}`}>
         <div className={`featured-media ${project.secondaryImage ? 'featured-media-split' : ''}`}>
           <div className="featured-image">
-            <Image src={project.image} alt={project.imageAlt} fill sizes="(max-width: 800px) 100vw, 58vw" className="media-cover" />
+            <Image src={project.image} alt={project.imageAlt} fill sizes="(max-width: 800px) 100vw, 50vw" className="project-card-image" />
           </div>
           {project.secondaryImage ? (
             <div className="featured-image">
-              <Image src={project.secondaryImage} alt={project.secondaryImageAlt ?? ''} fill sizes="(max-width: 800px) 50vw, 29vw" className="media-cover" />
+              <Image src={project.secondaryImage} alt={project.secondaryImageAlt ?? ''} fill sizes="(max-width: 800px) 50vw, 25vw" className="project-card-image" />
             </div>
           ) : null}
           <span className="project-number">{project.index}</span>
@@ -45,7 +45,7 @@ function ProjectCard({ project }: { project: FeaturedProject }) {
 }
 
 export default function Home() {
-  const { profile, stats, featuredProjects, experience, about, contact } = portfolioData
+  const { profile, stats, featuredProjects, scadaPerformance, experience, about, contact } = portfolioData
 
   return (
     <>
@@ -72,6 +72,23 @@ export default function Home() {
           <dl className="stats-grid">
             {stats.map((stat) => <div key={stat.label}><dd>{stat.value}</dd><dt>{stat.label}</dt><p>{stat.note}</p></div>)}
           </dl>
+          <p className="stats-methodology">{scadaPerformance.methodology}</p>
+        </section>
+
+        <section className="home-performance" aria-labelledby="performance-heading">
+          <div className="performance-heading">
+            <p className="eyebrow">SCADA / PERFORMANCE SNAPSHOT</p>
+            <h2 id="performance-heading">真实数据，<br />清晰口径。</h2>
+            <p>{scadaPerformance.headline.note}</p>
+          </div>
+          <div className="performance-mini-grid">
+            {[...scadaPerformance.reach, ...scadaPerformance.engagement].map((metric) => (
+              <div key={metric.label}>
+                <span>{metric.label}</span><strong>{metric.value}</strong>
+                {'note' in metric && metric.note ? <p>{metric.note}</p> : null}
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="section-shell projects-section" id="projects">
@@ -88,7 +105,7 @@ export default function Home() {
         <section className="experience-section" id="experience">
           <div className="section-heading light-heading"><p className="eyebrow">02 / EXPERIENCE</p><h2>经历与工作方式</h2></div>
           <div className="experience-grid">
-            <div className="experience-lead"><span>{experience.period}</span><h3>{experience.company}</h3><p>{experience.role}</p></div>
+            <div className="experience-lead"><span>{experience.period}</span><h3>{experience.company}</h3><p>{experience.role}</p><small>{experience.englishRole}</small></div>
             <div className="experience-body">
               <p>{experience.summary}</p>
               <ol>{experience.workflow.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span>{item}</li>)}</ol>
@@ -99,7 +116,7 @@ export default function Home() {
         <section className="about-section section-shell" id="about">
           <div className="about-portrait">
             <Image src={profile.portrait} alt={profile.portraitAlt} fill sizes="(max-width: 900px) 100vw, 40vw" className="media-cover" />
-            <span>ABOUT / XMR</span>
+            <span>ABOUT / RAE</span>
           </div>
           <div className="about-content">
             <div className="section-heading"><p className="eyebrow">03 / ABOUT ME</p><h2>把内容做清楚，也把过程讲清楚。</h2></div>
