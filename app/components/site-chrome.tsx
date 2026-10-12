@@ -6,12 +6,12 @@ export function ArrowIcon() {
 }
 
 export function SiteHeader() {
-  const { navigation, contact } = portfolioData
+  const { brand, navigation, contact } = portfolioData
 
   return (
     <header className="site-header">
       <Link className="wordmark" href="/#home" aria-label="返回首页">
-        XMR<span>®</span>
+        {brand}
       </Link>
       <nav aria-label="主要导航">
         {navigation.map((item) => (
