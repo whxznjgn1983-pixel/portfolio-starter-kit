@@ -139,7 +139,10 @@ function CaseStudyPage({ project }: { project: CaseStudy }) {
       </section>
 
       <section className={`case-body ${project.slug === 'ai-video-production' ? 'workflow-case' : ''}`}>
-        <div className="case-body-intro"><p className="eyebrow">PROJECT BREAKDOWN</p><p>已知信息直接展示；未提供的数据与项目因果关系不作推断。</p></div>
+        <div className="case-body-intro">
+          <p className="eyebrow">PROJECT BREAKDOWN</p>
+          <p>{project.slug === 'ai-video-production' ? '从自主研究、创意开发到成片交付，完整拆解独立制作流程与团队的产品审核边界。' : '已知信息直接展示；未提供的数据与项目因果关系不作推断。'}</p>
+        </div>
         <div className="case-sections">
           {project.sections.map((section, index) => (
             <article className="case-section" key={section.englishTitle}>
