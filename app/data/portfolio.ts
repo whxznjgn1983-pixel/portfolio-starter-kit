@@ -136,8 +136,8 @@ export const portfolioData = {
     capabilities: ['内容策划', '短视频脚本', '账号运营', '拍摄与剪辑协同', '数据复盘', 'AI 内容制作'],
   },
   contact: {
-    email: 'your-email@example.com',
-    resumePath: '/resume-xu-minrui.pdf',
-    note: '邮箱与 PDF 简历当前为占位内容，请在投递前替换为最终版本。',
+    email: '13868826077@163.com',
+    resumePath: '/resume.pdf',
+    note: '欢迎通过邮箱联系，或下载 PDF 简历了解更多经历。',
   },
 }
