@@ -33,6 +33,50 @@ function Metrics({ items }: { items: readonly { label: string; value: string }[]
   return <dl className="case-metrics">{items.map((item) => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
 }
 
+function PerformanceDashboard() {
+  const performance = portfolioData.scadaPerformance
+  return (
+    <section className="performance-dashboard" aria-labelledby="dashboard-title">
+      <div className="dashboard-headline">
+        <p className="eyebrow">PERFORMANCE DASHBOARD</p>
+        <strong>{performance.headline.value}<span aria-hidden="true">↗</span></strong>
+        <h2 id="dashboard-title">{performance.headline.label}</h2>
+        <p>{performance.headline.note}</p>
+      </div>
+      <div className="follower-comparison" aria-label="粉丝规模前后对比">
+        {performance.followerComparison.map((item, index) => (
+          <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong><p>{item.note}</p>{index === 0 ? <b aria-hidden="true">→</b> : null}</div>
+        ))}
+      </div>
+      <div className="reach-comparison">
+        {performance.reach.map((item) => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong><p>{item.note}</p></div>)}
+      </div>
+      <div className="engagement-row">
+        {performance.engagement.map((item) => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}
+      </div>
+      <p className="dashboard-methodology"><span>DATA NOTE</span>{performance.methodology}</p>
+    </section>
+  )
+}
+
+function VideoCards({ project }: { project: CaseStudy }) {
+  if (!project.videos?.length) return null
+  return (
+    <section className="representative-videos" aria-labelledby="representative-videos-heading">
+      <div className="video-section-heading"><p className="eyebrow">REPRESENTATIVE VIDEOS</p><h2 id="representative-videos-heading">官方账号代表视频</h2><p>点击前往抖音官方页面观看。视频未下载或重新托管。</p></div>
+      <div className="external-video-grid">
+        {project.videos.map((video) => (
+          <a key={video.url} href={video.url} target="_blank" rel="noreferrer" className="external-video-card" aria-label={`在抖音观看：${video.title}`}>
+            <div className="external-video-image"><Image src={video.image} alt={video.imageAlt} fill sizes="(max-width: 760px) 100vw, 50vw" className="media-contain" /><span className="play-icon" aria-hidden="true">▶</span></div>
+            <div><span>{video.source}</span><h3>{video.title}</h3><p>前往官方视频 <ArrowIcon /></p></div>
+          </a>
+        ))}
+      </div>
+      <p className="video-role-note">本人在相关内容中参与选题策划、内容制作与账号运营执行；具体工作属于团队协作，不将视频表现归因于个人单独贡献。</p>
+    </section>
+  )
+}
+
 function CaseStudyPage({ project }: { project: CaseStudy }) {
   return (
     <>
@@ -55,10 +99,12 @@ function CaseStudyPage({ project }: { project: CaseStudy }) {
             <article className="case-section" key={section.englishTitle}>
               <span>{String(index + 1).padStart(2, '0')}</span>
               <div><p>{section.englishTitle}</p><h3>{section.title}</h3></div>
-              <p>{section.content}</p>
+              <div className="case-section-content"><p>{section.content}</p>{section.bullets?.length ? <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul> : null}</div>
             </article>
           ))}
         </div>
+
+        {project.slug === 'scada-content-operations' ? <PerformanceDashboard /> : null}
 
         {project.supportingImage && project.supportingImageAlt ? (
           <figure className="case-supporting">
@@ -68,6 +114,7 @@ function CaseStudyPage({ project }: { project: CaseStudy }) {
         ) : null}
 
         <ul className="tag-list case-tags">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+        <VideoCards project={project} />
       </section>
       <NextProject />
     </>
@@ -78,7 +125,7 @@ function FilmCard({ film }: { film: StudentFilm }) {
   return (
     <article className={`film-card film-${film.accent}`}>
       <Link href={`/projects/${film.slug}`} aria-label={`查看学生作品：${film.chineseTitle}`}>
-        <div className="film-image"><Image src={film.image} alt={film.imageAlt} fill sizes="(max-width: 800px) 100vw, 48vw" className="media-cover" /></div>
+        <div className="film-image"><Image src={film.image} alt={film.imageAlt} fill sizes="(max-width: 800px) 100vw, 50vw" className="media-contain" /></div>
         <div className="film-card-copy"><p>{film.index} · {film.typeEn}</p><h2>{film.chineseTitle}</h2><h3>{film.englishTitle}</h3><dl><div><dt>类型</dt><dd>{film.typeZh}</dd></div><div><dt>我的职责</dt><dd>{film.roleZh}</dd></div></dl><span>VIEW PROJECT <ArrowIcon /></span></div>
       </Link>
     </article>
@@ -90,7 +137,7 @@ function StudentFilmsPage() {
     <>
       <section className="collection-hero"><Breadcrumb current="STUDENT FILM PROJECTS" /><p className="eyebrow">03 / FILM & DOCUMENTARY</p><h1>Student Film<br />Projects</h1><p>University of Westminster · BA Television Production</p></section>
       <section className="film-grid">{portfolioData.studentFilms.map((film) => <FilmCard film={film as StudentFilm} key={film.slug} />)}</section>
-      <section className="collection-note"><span>NOTE</span><p>现有页面只呈现已确认的项目类型与职责。节目内容、纪录片主题及成片链接将在资料补充后更新。</p></section>
+      <section className="collection-note"><span>NOTE</span><p>现有页面只呈现已确认的项目类型与职责。两部作品均提供 B 站观看链接；未提供的内容、主题与制作细节继续保留待补充。</p></section>
       <NextProject />
     </>
   )
@@ -106,7 +153,10 @@ function FilmDetailPage({ film }: { film: StudentFilm }) {
       </section>
       <section className="film-detail-body">
         {film.sections.map((section, index) => <article key={section.englishTitle}><span>{String(index + 1).padStart(2, '0')}</span><div><p>{section.englishTitle}</p><h3>{section.title}</h3></div><p>{section.content}</p></article>)}
-        <div className="video-placeholder"><span>FUTURE UPDATE</span><strong>视频播放链接待补充</strong><p>Video link coming soon</p></div>
+        <a className="film-video-link" href={film.videoUrl} target="_blank" rel="noreferrer" aria-label={`在 B 站观看 ${film.englishTitle}`}>
+          <div className="film-video-preview"><Image src={film.image} alt={`${film.englishTitle} 完整作品封面`} fill sizes="(max-width: 760px) 100vw, 75vw" className="media-contain" /><span className="play-icon" aria-hidden="true">▶</span></div>
+          <div><span>FULL FILM · BILIBILI</span><strong>观看完整作品</strong><p>{film.englishTitle} · {film.chineseTitle} <ArrowIcon /></p></div>
+        </a>
       </section>
       <nav className="film-project-nav" aria-label="学生作品导航"><Link href="/projects/student-film-projects">← 返回 Student Film Projects</Link></nav>
     </>
@@ -119,7 +169,7 @@ function PhotographyPage() {
     <>
       <section className="collection-hero photo-hero"><Breadcrumb current="PHOTOGRAPHY" /><p className="eyebrow">04 / VISUAL PRACTICE</p><h1>{photography.title}</h1><h2>{photography.subtitle}</h2><p>{photography.intro}</p></section>
       <section className="photo-gallery" aria-label="摄影作品画廊">
-        {photography.images.map((photo, index) => <figure className={`photo-item photo-item-${index + 1} photo-${photo.orientation}`} key={photo.src}><ImageLightbox src={photo.src} alt={photo.alt} className="gallery-image" sizes="(max-width: 800px) 100vw, 65vw" /><figcaption><span>0{index + 1}</span><span>PHOTOGRAPHY</span></figcaption></figure>)}
+        {photography.images.map((photo, index) => <figure className={`photo-item photo-item-${index + 1} photo-${photo.orientation}`} key={photo.src}><ImageLightbox src={photo.src} alt={photo.alt} contain className="gallery-image" sizes="(max-width: 800px) 100vw, 65vw" /><figcaption><span>0{index + 1}</span><span>PHOTOGRAPHY</span></figcaption></figure>)}
       </section>
       <NextProject />
     </>
