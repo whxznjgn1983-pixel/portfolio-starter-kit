@@ -169,9 +169,10 @@ img { display: block; }
 .case-section-content > p { margin: 0; line-height: 1.85; }
 .case-section-content ul { margin: 1rem 0 0; padding-left: 1.1rem; }
 .case-section-content li { margin: .55rem 0; line-height: 1.7; }
-.workflow-case .case-sections { display: grid; grid-template-columns: repeat(5, 1fr); border-bottom: 1px solid var(--ink); }
+.workflow-case .case-sections { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--ink); }
 .workflow-case .case-section { display: flex; min-height: 330px; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 0; padding: 1.5rem; }
-.workflow-case .case-section:last-child { border-right: 0; }
+.workflow-case .case-section:nth-child(-n+4) { border-bottom: 1px solid var(--line); }
+.workflow-case .case-section:last-child { grid-column: span 2; border-right: 0; }
 .workflow-case .case-section-content { margin-top: auto; font-size: .85rem; }
 .case-supporting { margin: clamp(5rem, 9vw, 9rem) 0 0; }
 .case-supporting figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; font-family: var(--font-geist-mono), monospace; font-size: .66rem; }
