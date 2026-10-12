@@ -55,11 +55,11 @@ export default function Home() {
       <main id="content">
         <section className="hero" id="home">
           <div className="hero-grid" aria-hidden="true" />
-          <div className="hero-topline"><span>PORTFOLIO / 2027</span><span>CONTENT · BRAND · SOCIAL</span></div>
+          <div className="hero-topline"><span>PORTFOLIO / 2027</span><span>{profile.focus.join(' · ')}</span></div>
           <div className="hero-content">
             <p className="eyebrow">{profile.availability}</p>
             <h1>{profile.name}<span>{profile.englishName}</span></h1>
-            <p className="hero-role">{profile.roles.join(' / ')}</p>
+            <p className="hero-role">{profile.focus.join(' · ')}</p>
             <p className="hero-intro">{profile.intro}</p>
             <div className="hero-actions">
               <a className="primary-button" href="#projects">查看项目 <ArrowIcon /></a>
@@ -78,8 +78,8 @@ export default function Home() {
         <section className="home-performance" aria-labelledby="performance-heading">
           <div className="performance-heading">
             <p className="eyebrow">SCADA / PERFORMANCE SNAPSHOT</p>
-            <h2 id="performance-heading">真实数据，<br />清晰口径。</h2>
-            <p>{scadaPerformance.headline.note}</p>
+            <h2 id="performance-heading">数据之外，<br />也推动改进。</h2>
+            <p>从内容负责、用户需求分析到策略落实与 SOP 交接，用可验证的行动呈现对团队的实际价值。</p>
           </div>
           <div className="performance-mini-grid">
             {[...scadaPerformance.reach, ...scadaPerformance.engagement].map((metric) => (
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="section-heading">
             <p className="eyebrow">01 / SELECTED WORK</p>
             <h2>项目与内容实践</h2>
-            <p>从商业账号运营、AI 视频制作到学生影视与摄影，用真实素材呈现策划、制作与执行能力。</p>
+            <p>从科技企业账号运营、内容策略到 AI 视频与影视制作，用真实案例呈现内容责任、主动优化与视觉执行能力。</p>
           </div>
           <div className="featured-grid">
             {featuredProjects.map((project) => <ProjectCard project={project} key={project.slug} />)}
@@ -119,7 +119,7 @@ export default function Home() {
             <span>ABOUT / RAE</span>
           </div>
           <div className="about-content">
-            <div className="section-heading"><p className="eyebrow">03 / ABOUT ME</p><h2>把内容做清楚，也把过程讲清楚。</h2></div>
+            <div className="section-heading"><p className="eyebrow">03 / ABOUT ME</p><h2>Creativity,<br />guided by strategy.</h2></div>
             <div className="about-copy">
               {about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               <div className="capability-grid">{about.capabilities.map((item) => <span key={item}>{item}</span>)}</div>
