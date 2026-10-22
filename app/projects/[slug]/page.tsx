@@ -107,18 +107,27 @@ function TeamContribution() {
 
 function VideoCards({ project }: { project: CaseStudy }) {
   if (!project.videos?.length) return null
+  const isAiProject = project.slug === 'ai-video-production'
   return (
     <section className="representative-videos" aria-labelledby="representative-videos-heading">
-      <div className="video-section-heading"><p className="eyebrow">REPRESENTATIVE VIDEOS</p><h2 id="representative-videos-heading">官方账号代表视频</h2><p>点击前往抖音官方页面观看。视频未下载或重新托管。</p></div>
+      <div className="video-section-heading">
+        <p className="eyebrow">{isAiProject ? 'SELECTED AI VIDEOS' : 'REPRESENTATIVE VIDEOS'}</p>
+        <h2 id="representative-videos-heading">{isAiProject ? 'AI 视频代表作品' : '官方账号代表视频'}</h2>
+        <p>点击前往抖音官方页面观看。视频未下载或重新托管。</p>
+      </div>
       <div className="external-video-grid">
         {project.videos.map((video) => (
           <a key={video.url} href={video.url} target="_blank" rel="noreferrer" className="external-video-card" aria-label={`在抖音观看：${video.title}`}>
             <div className="external-video-image"><Image src={video.image} alt={video.imageAlt} fill sizes="(max-width: 760px) 100vw, 50vw" className="media-contain" /><span className="play-icon" aria-hidden="true">▶</span></div>
-            <div><span>{video.source}</span><h3>{video.title}</h3><p>前往官方视频 <ArrowIcon /></p></div>
+            <div><span>{video.source}</span><h3>{video.title}</h3><p>{isAiProject ? '观看视频' : '前往官方视频'} <ArrowIcon /></p></div>
           </a>
         ))}
       </div>
-      <p className="video-role-note">本人负责相关内容的选题、脚本、发布与运营监测，并参与视频制作；拍摄、剪辑与业务工作包含团队协作，不将视频表现归因于个人单独贡献。</p>
+      <p className="video-role-note">
+        {isAiProject
+          ? '本人独立负责 AI 视频的技术研究、创意构思、脚本撰写、画面生成与优化、剪辑包装及成片交付；团队主要审核产品核心理念与专业信息是否准确。'
+          : '本人负责相关内容的选题、脚本、发布与运营监测，并参与视频制作；拍摄、剪辑与业务工作包含团队协作，不将视频表现归因于个人单独贡献。'}
+      </p>
     </section>
   )
 }
