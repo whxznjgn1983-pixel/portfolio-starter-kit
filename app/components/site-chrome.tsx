@@ -15,7 +15,9 @@ export function SiteHeader() {
       </Link>
       <nav aria-label="主要导航">
         {navigation.map((item) => (
-          <Link key={item.label} href={item.href}>{item.label}</Link>
+          'download' in item
+            ? <a key={item.label} href={item.href} download={item.download}>{item.label}</a>
+            : <Link key={item.label} href={item.href}>{item.label}</Link>
         ))}
       </nav>
       <a className="header-contact" href={`mailto:${contact.email}`}>
