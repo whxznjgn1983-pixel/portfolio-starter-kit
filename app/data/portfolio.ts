@@ -27,7 +27,7 @@ export const portfolioData = {
   navigation: [
     { label: 'Home', href: '/#home' }, { label: 'Projects', href: '/#projects' },
     { label: 'Experience', href: '/#experience' }, { label: 'About', href: '/#about' },
-    { label: 'Resume', href: '/#resume' },
+    { label: 'Resume', href: '/RaeResume.pdf', download: 'RaeResume.pdf' },
   ],
   profile: {
     name: '徐旻睿', englishName: 'RAE', university: 'University of Westminster',
@@ -130,6 +130,10 @@ export const portfolioData = {
         { title: '剪辑与后期包装', englishTitle: 'Post-production', content: '独立完成素材组接、视频剪辑、节奏调整与后期包装，将生成画面整合为可交付的完整内容。' },
         { title: '产品理念审核', englishTitle: 'Product Alignment', content: '团队主要审核视频表达是否符合产品核心理念与专业信息，避免产品理解或传播方向出现偏差。创意、技术探索与制作全流程由我独立负责。' },
         { title: '核心能力', englishTitle: 'Key Competencies', content: '这一项目主要体现了我在新技术应用、自主学习与独立交付方面的能力。', bullets: ['Independent Research｜自主研究 AI 工具、生成方法与应用方式。', 'End-to-End Production｜独立完成从创意、脚本、AI 画面到剪辑包装的全流程。', 'Creative Problem-Solving｜根据画面生成效果持续调整方法，将创意转化为可交付内容。'] },
+      ],
+      videos: [
+        { title: '中控 SCADA 让数据看得见', url: 'https://v.douyin.com/LmTZfLR13rw/', source: '中控SCADA咨询号', image: '/projects/ai-video-production/cover.jpg', imageAlt: '中控 SCADA 让数据看得见 AI 视频封面' },
+        { title: '为什么有些项目你连参与的机会都没有？', url: 'https://v.douyin.com/kU-vIfV8WJU/', source: '中控SCADA咨询号', image: '/projects/ai-video-production/cover.jpg', imageAlt: '为什么有些项目你连参与的机会都没有 AI 视频封面' },
       ], tags: ['Independent Research', 'End-to-End Production', 'Creative Problem-Solving', 'AI Visual Production', 'Post-production'],
     },
   } satisfies Record<string, CaseStudy>,
@@ -176,7 +180,7 @@ export const portfolioData = {
       '我希望将影视制作能力、内容策略思维与 AI 辅助生产能力结合，在内容营销、品牌传播与市场运营领域持续发展。',
     ], capabilities: ['内容责任与独立执行', '策略制定与落地', '数据监测与复盘', '跨团队协作', '流程标准化', '视觉制作', 'AI 辅助内容生产'],
   },
-  contact: { email: '13868826077@163.com', resumePath: '/resume.pdf?v=20261013-1', note: '欢迎通过邮箱联系，或下载 PDF 简历了解更多经历。' },
+  contact: { email: '13868826077@163.com', resumePath: '/RaeResume.pdf', note: '欢迎通过邮箱联系，或下载 PDF 简历了解更多经历。' },
 } as const
 
 export const allProjectSlugs = [
